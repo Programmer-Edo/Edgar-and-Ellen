@@ -40,6 +40,7 @@ const inputNumber = form.querySelector('input[name=NumberOfGuests]')
 const input = form.querySelectorAll('input')
 const inputRadio = form.querySelectorAll('input[type=radio]')
 const labels = form.querySelectorAll('label')
+emailjs.init("fPsgc0UerdO7YqETg")
 
 
 inputNumber.addEventListener('input', (e) => {
@@ -127,8 +128,29 @@ form.addEventListener('submit', (e) => {
         }
     })
 
-    if (isValid) {
-        console.log(values);
+    if (isValid) {                        
+        emailjs.send("service_d13f0g4", "template_6quncoe", values)
+        .then(() => {
+            Swal.fire({
+                icon: 'success',
+                title: 'Հաջողությամբ!',
+                text: 'Հաղորդագրությունն հաջողությամբ ուղարկված!',
+                confirmButtonColor: '#3085d6',
+                timer: 2000,
+                showConfirmButton: false
+            })
+            form.reset()
+        })
+        .catch((error) => {
+            Swal.fire({
+                icon: 'error',
+                title: 'Սխալ',
+                text: 'Հաղորդագրությունն ուղարկելը չհաջողվեց։ Խնդրում ենք կրկին փորձել ավելի ուշ։',
+                confirmButtonColor: '#d33',
+                timer: 2000,
+                showConfirmButton: false
+            })
+            console.error("EmailJS error:", error)
+        })
     }
-
 })

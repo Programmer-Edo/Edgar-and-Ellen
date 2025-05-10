@@ -8,7 +8,6 @@
     <title>Էդգար ԵՎ Էլեն</title>
     <link rel="icon" href="./public/married-icon.png">
     <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/script.js"></script>
 </head>
 <body>
 
@@ -95,7 +94,7 @@
                    <label for="top2">Փեսայի կողմ</label>
                </div>
 
-               <input type="text" name="NameAndSurname" placeholder="Անուն Ազգանուն">
+               <input type="text" name="NameAndSurname" placeholder="Անուն Ազգանուն" autocomplete="off">
 
                <div>
                    <input type="radio" name="group2" id="bottom1" value="Մենք կգանք">
@@ -106,7 +105,7 @@
                    <label for="bottom2">Չենք կարող գալ</label>
                </div>
 
-               <input type="text" name="NumberOfGuests" placeholder="Հյուրերի թիվ">
+               <input type="text" name="NumberOfGuests" placeholder="Հյուրերի թիվ" autocomplete="off">
 
                <input type="submit" value="ՈՒղարկել">
            </form>
@@ -118,5 +117,9 @@
        <p>Սպասում ենք ձեզ</p>
        <img src="./public/Wedding.svg" alt="Հարսանեկան պատկեր">
    </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   <script src="js/script.js"></script>
 </body>
 </html>
