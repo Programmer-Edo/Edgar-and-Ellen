@@ -346,6 +346,9 @@ footer {
         margin: 50px auto;
     }
 }
+.input-error::placeholder {
+    color: crimson;
+}
 @keyframes reveal {
     0% {
         width: 0;
